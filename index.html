@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rüya Tabirleri: AI Asistanı — Rüyanı anlat, yapay zekâ anında yorumlasın. Geniş tabir arşivi ve kişisel AI analizi.">
+  <title>Rüya Tabirleri: AI Asistanı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0e17;
+      --surface: #1a1829;
+      --surface-2: #242136;
+      --text: #f4f0ff;
+      --muted: #a89ec4;
+      --accent: #9b7dff;
+      --accent-soft: rgba(155, 125, 255, 0.15);
+      --gold: #e8c547;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 16px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(155, 125, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(232, 197, 71, 0.08), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(155, 125, 255, 0.1), transparent 40%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      background: linear-gradient(180deg, var(--surface), rgba(26, 24, 41, 0.6));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(232, 197, 71, 0.12);
+      border: 1px solid rgba(232, 197, 71, 0.25);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero .lead {
+      font-size: 1.05rem;
+      color: #ddd6f3;
+      max-width: 640px;
+      margin-bottom: 10px;
+    }
+
+    .hero .sub {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 14px;
+      padding: 14px 22px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #9b7dff, #7c5cff);
+      color: white;
+      box-shadow: 0 12px 30px rgba(124, 92, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(124, 92, 255, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { background: #2d2942; }
+
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+
+    section h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .features li {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .features strong { color: #e8e2ff; }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .steps li {
+      position: relative;
+      padding-left: 44px;
+      color: #ddd6f3;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(155, 125, 255, 0.25);
+    }
+
+    .notice {
+      background: rgba(232, 197, 71, 0.08);
+      border-color: rgba(232, 197, 71, 0.2);
+    }
+
+    .notice ul {
+      padding-left: 18px;
+      color: #ddd6c8;
+    }
+
+    .notice li { margin-bottom: 8px; }
+
+    .closing {
+      text-align: center;
+      padding: 32px 20px 8px;
+    }
+
+    .closing p {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .hero { padding: 28px 20px; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img
+            src="https://play-lh.googleusercontent.com/gr2NTp8Rgge_8sOWOstAv3FUyE2rcRzD1ztsBGE5BiXo35VpZx_b5bmoqWaAmFCOhjvDwyfes_ZWlWdO2GT1=w480-h960-rw"
+            alt="Rüya Tabirleri: AI Asistanı uygulama ikonu"
+            width="48"
+            height="48"
+            loading="eager"
+          >
+        </div>
+        <div>
+          <h1>Rüya Tabirleri</h1>
+          <p>AI Asistanı · Wind Apps</p>
+        </div>
+      </div>
+      <nav>
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="badge">Rüya Tabirleri &amp; Yapay Zekâ Yorumu</span>
+        <h2>Rüyanı anlat, Yapay Zekâ anında yorumlasın!</h2>
+        <p class="lead">
+          Rüya sembollerini keşfet, anlamlarını öğren ve sana özel yorumlar al.
+        </p>
+        <p class="sub">
+          Hazır rüya tabirleri kütüphanesinde arama yapabilir veya rüyanı yazarak kişisel analiz oluşturabilirsin.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary"
+             href="https://play.google.com/store/apps/details?id=com.windtech.airuyatabirleri&hl=tr"
+             target="_blank"
+             rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.6 1.8c-.3.3-.6.8-.6 1.6v17.2c0 .8.3 1.3.6 1.6l.1.1 9.7-9.7v-.4L3.7 1.7l-.1.1zm10.8 7.2-2.7 2.7 2.7 2.7 3.8-2.1c1.1-.6 1.1-1.6 0-2.2l-3.8-2.1zm-4.1 4.1-9.7 9.7c.4.4 1 .5 1.6.2l8.1-8.1-2.7-2.7zm-.9-.9 2.7-2.7L3.6 2.8c-.6-.3-1.2-.2-1.6.2l9.7 9.7z"/>
+            </svg>
+            Google Play'den İndir
+          </a>
+          <a class="btn btn-secondary" href="gizlilik.html">Gizlilik Politikası</a>
+        </div>
+      </section>
+
+      <section>
+        <h3>✨ Öne Çıkan Özellikler</h3>
+        <ul class="features">
+          <li><strong>Yapay zekâ destekli rüya yorumu</strong> — Rüyanı detaylı anlat; geleneksel, psikolojik ve manevi bakış açılarıyla analiz al.</li>
+          <li><strong>Geniş rüya tabiri arşivi</strong> — Hayvanlar, nesneler, mekânlar ve yüzlerce sembolü keşfet.</li>
+          <li><strong>Hızlı ve kolay arama</strong> — Anahtar kelime veya sembolle anında sonuç bul.</li>
+          <li><strong>Geçmiş kayıtları</strong> — Yorumlarını ve kaydettiğin tabirleri tek yerde sakla.</li>
+          <li><strong>Günlük hatırlatıcılar</strong> — Rüyalarını düzenli kaydetmek için bildirimler al.</li>
+          <li><strong>Hesap gerektirmez</strong> — Uygulamayı hemen kullanmaya başla.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>🔮 Nasıl Çalışır?</h3>
+        <ol class="steps">
+          <li>Kategoriler arasında gez veya “Yapay Zekâ ile Yorumla” bölümünü aç.</li>
+          <li>Rüyanı birkaç cümleyle anlat.</li>
+          <li>Yapay zekâ; sembolleri, duyguları ve detayları analiz ederek sana özel yorum oluştursun.</li>
+          <li>Yorumlarını kaydedip istediğin zaman tekrar incele.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>📚 Rüya Tabirleri</h3>
+        <p>
+          Yüzlerce hazır rüya yorumu; kısa açıklamalar, geleneksel tabirler,
+          psikolojik değerlendirmeler ve manevi yorumlar tek uygulamada.
+        </p>
+      </section>
+
+      <section class="notice">
+        <h3>⚠️ Önemli Bilgilendirme</h3>
+        <ul>
+          <li>Uygulama eğlence ve kişisel farkındalık amaçlıdır.</li>
+          <li>Tıbbi, hukuki veya finansal tavsiye sunmaz.</li>
+          <li>Yapay zekâ yorumları kesin kehanet veya tanı niteliği taşımaz.</li>
+          <li>Bazı özelliklerde reklam veya günlük kullanım limiti bulunabilir.</li>
+        </ul>
+      </section>
+
+      <div class="closing">
+        <p>Rüyalarının gizli mesajlarını keşfetmeye hazır mısın?</p>
+        <a class="btn btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.windtech.airuyatabirleri&hl=tr"
+           target="_blank"
+           rel="noopener noreferrer">
+          Hemen İndir
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 - Wind Apps</span>
+      <span>
+        <a href="mailto:windapps.dev@gmail.com">windapps.dev@gmail.com</a>
+        ·
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
