@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rüya Tabirleri: AI Asistanı gizlilik politikası">
+  <title>Gizlilik Politikası — Rüya Tabirleri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0e17;
+      --surface: #1a1829;
+      --surface-2: #242136;
+      --text: #f4f0ff;
+      --muted: #a89ec4;
+      --accent: #9b7dff;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 10%, rgba(155, 125, 255, 0.15), transparent 35%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 28px;
+    }
+
+    header a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    header a:hover { color: var(--text); }
+
+    .doc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 28px;
+    }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      margin-bottom: 8px;
+    }
+
+    .doc-header p {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .meta {
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    section h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.2rem;
+      color: #e8e2ff;
+      margin-bottom: 12px;
+    }
+
+    section p {
+      color: #ddd6f3;
+      margin-bottom: 10px;
+    }
+
+    section ul {
+      padding-left: 20px;
+      color: #ddd6f3;
+    }
+
+    section li {
+      margin-bottom: 10px;
+    }
+
+    section a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section a:hover { text-decoration: underline; }
+
+    .contact-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .doc { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html">← Ana Sayfa</a>
+      <a href="https://play.google.com/store/apps/details?id=com.windtech.airuyatabirleri&hl=tr" target="_blank" rel="noopener noreferrer">Google Play</a>
+    </header>
+
+    <article class="doc">
+      <div class="doc-header">
+        <h1>Gizlilik Politikası</h1>
+        <p>Rüya Tabirleri: AI Asistanı</p>
+        <p class="meta">Wind Apps · Yürürlük: 27 Mayıs 2026</p>
+      </div>
+
+      <section>
+        <h2>Giriş</h2>
+        <p>
+          Bu Gizlilik Politikası, Wind Apps tarafından geliştirilen "Rüya Tabirleri: AI Asistanı"
+          uygulamasını (bundan sonra "Uygulama") kullanan kişiler için hazırlanmıştır.
+          Uygulamayı kullanarak bu politikada belirtilen veri işleme uygulamalarını kabul etmiş
+          sayılırsınız. Kabul etmiyorsanız lütfen Uygulamayı kullanmayınız.
+        </p>
+        <p>Uygulama için hesap oluşturma veya kayıt zorunluluğu yoktur.</p>
+      </section>
+
+      <section>
+        <h2>Toplanan Veriler</h2>
+        <p>Uygulama, hizmet sunabilmek için aşağıdaki verileri işleyebilir:</p>
+        <ul>
+          <li>
+            <strong>Rüya metni:</strong> Yapay zekâ ile yorumlatmak için girdiğiniz rüya içeriği,
+            bu amaçla işlenir ve güvenli bağlantı üzerinden yapay zekâ hizmetine iletilir.
+          </li>
+          <li>
+            <strong>Yerel kayıtlar:</strong> Yapay zekâ yorumlarınız ve kaydettiğiniz tabirler
+            cihazınızda saklanır. Hazır tabirlerde yaptığınız aramalar yalnızca cihazınızda yapılır,
+            sunucuya gönderilmez.
+          </li>
+          <li>
+            <strong>Teknik veriler:</strong> Uygulamanın düzgün çalışması ve hataların giderilmesi
+            için anonim cihaz ve kullanım bilgileri toplanabilir.
+          </li>
+          <li>
+            <strong>Reklam verileri:</strong> Uygulama içi reklamlar için reklam kimliği ve reklam
+            etkileşim verileri işlenebilir.
+          </li>
+          <li>
+            <strong>Bildirimler:</strong> İzin verirseniz günlük hatırlatma bildirimi gönderilir;
+            bildirimlerde rüya metniniz yer almaz.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verilerin Kullanım Amaçları</h2>
+        <ul>
+          <li>Rüya yorumlama ve uygulama özelliklerinin sunulması</li>
+          <li>Uygulama performansının ve kararlılığının iyileştirilmesi</li>
+          <li>Reklam gösterimi</li>
+          <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Üçüncü Taraf Hizmetler</h2>
+        <p>
+          Uygulama; yapay zekâ yorumlama, reklam, analitik ve hata raporlama gibi amaçlarla
+          Google tarafından sağlanan hizmetleri kullanır. Bu hizmet sağlayıcıların kendi
+          gizlilik politikaları geçerlidir.
+        </p>
+        <p>
+          Verileriniz; yasal zorunluluk veya resmi makamların usulüne uygun talepleri dışında
+          üçüncü taraflara satılmaz veya ticari amaçla paylaşılmaz.
+        </p>
+      </section>
+
+      <section>
+        <h2>Veri Saklama ve Güvenlik</h2>
+        <p>
+          Rüya metniniz ve yapay zekâ yorumlarınız öncelikle cihazınızda saklanır. Yapay zekâ
+          işlemi için metniniz güvenli bağlantı ile hizmet sağlayıcıya iletilir. Verilerin
+          korunması için makul güvenlik önlemleri alınmaktadır.
+        </p>
+        <p>
+          Cihaz yedekleme özelliği açıksa, uygulama verileriniz cihaz yedeklemesine dahil olabilir.
+        </p>
+      </section>
+
+      <section>
+        <h2>Yurt Dışına Aktarım</h2>
+        <p>
+          Kullanılan hizmet sağlayıcılar nedeniyle verileriniz Türkiye dışında da işlenebilir.
+          Bu aktarımlar ilgili mevzuata uygun şekilde gerçekleştirilir.
+        </p>
+      </section>
+
+      <section>
+        <h2>Çocukların Gizliliği</h2>
+        <p>
+          Uygulama 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamayı hedeflemez.
+          Böyle bir durum fark ederseniz
+          <a href="mailto:windapps.dev@gmail.com">windapps.dev@gmail.com</a>
+          adresinden bize ulaşabilirsiniz.
+        </p>
+      </section>
+
+      <section>
+        <h2>Haklarınız</h2>
+        <p>
+          KVKK ve GDPR kapsamında verilerinizin işlenip işlenmediğini öğrenme, bilgi talep etme,
+          düzeltme, silme ve itiraz etme haklarına sahipsiniz.
+        </p>
+        <p>
+          Cihazınızdaki verileri silmek için uygulama ayarlarından depolamayı temizleyebilir
+          veya uygulamayı kaldırabilirsiniz.
+        </p>
+      </section>
+
+      <section>
+        <h2>Değişiklikler</h2>
+        <p>
+          Bu politika zaman zaman güncellenebilir. Güncel sürüm uygulama içinde veya yayınlandığı
+          web adresinde yürürlük tarihi ile birlikte paylaşılır.
+        </p>
+      </section>
+
+      <section>
+        <h2>İletişim</h2>
+        <div class="contact-box">
+          <p><strong>Geliştirici:</strong> Wind Apps</p>
+          <p><strong>E-posta:</strong> <a href="mailto:windapps.dev@gmail.com">windapps.dev@gmail.com</a></p>
+          <p><strong>Yürürlük Tarihi:</strong> 27 Mayıs 2026</p>
+        </div>
+      </section>
+    </article>
+
+    <footer>
+      <p>
+        <a href="index.html">Ana Sayfa</a>
+        ·
+        <a href="https://play.google.com/store/apps/details?id=com.windtech.airuyatabirleri&hl=tr">Google Play</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
