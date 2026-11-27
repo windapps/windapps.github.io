@@ -225,3 +225,50 @@ footer {
 }
 
 footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+/* Yasal belgeler (gizlilik politikası) */
+.doc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+}
+
+.doc-header { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+.doc-header h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+
+.doc-header .meta { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
+
+.lang-switch { display: flex; gap: 8px; margin-top: 14px; }
+
+.lang-switch a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.doc h2 { font-size: 1.15rem; font-weight: 800; margin: 26px 0 10px; }
+
+.doc p, .doc li { color: var(--muted); }
+
+.doc p { margin-bottom: 10px; }
+
+.doc ul { padding-inline-start: 20px; margin-bottom: 10px; }
+
+.doc li { margin-bottom: 8px; }
+
+.doc strong { color: var(--text); }
+
+.doc a { color: var(--primary); }
+
+.doc-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0 8px; }
+
+@media (max-width: 600px) {
+  .doc { padding: 24px 18px; }
+}
